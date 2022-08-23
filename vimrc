@@ -2,7 +2,6 @@
 " VIM CONFIGURATION ------------------------------------------------------
 "
 set nocompatible
-set cursorline
 set nowrap
 set tabstop=4
 set scrolloff=10
