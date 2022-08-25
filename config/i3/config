@@ -120,7 +120,7 @@ $bs $mod+Shift+r                						restart
 
 # Launch DMenu ( a application launcher )
 $bs $mod+Shift+d                						exec dmenu_run -b -l 5 -nf white
-$bs $mod+d                      						exec rofi -show run -lines 4 -eh 1 -width 100 -padding 500
+$bs $mod+d                      						exec rofi -show
 
 # Screenshots
 $bs Print 												exec maim "/home/$USER/Pictures/$(date).jpg"
@@ -212,6 +212,10 @@ for_window [class="Gpick"]								floating enable, move position center
 
 for_window [class="pl.skmedix.bootstrap.Bootstrap"]		floating enable, resize set 1016 623, move position center
 
+for_window [class="Sxiv"]								floating enable, move position center
+
+for_window [class="steam_app_1827180"]					floating disable
+
 
 
 
@@ -248,7 +252,7 @@ assign [class="SimpleScreenRecorder"]                   $ws8
 #######################
 exec_always --no-startup-id                             autotiling
 exec_always --no-startup-id                             fcitx5
-exec_always --no-startup-id								feh --bg-fill /home/$USER/Pictures/Wallpapers/Dark-Theme-Neko-1.jpg
+exec_always --no-startup-id								feh --bg-fill /home/$USER/Pictures/Wallpapers/BlueArchive-2.png
 exec_always --no-startup-id                             /home/$USER/.Scripts/A-K-B.sh
 exec_always --no-startup-id								/home/$USER/.Scripts/Battery-Notifier.sh
 
