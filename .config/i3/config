@@ -1,8 +1,8 @@
 ############
 # SETTINGS #
 ############
-set $mod Mod4
-set $bs bindsym
+set $mod			Mod4
+set $bs				bindsym
 
 
 
@@ -11,7 +11,7 @@ set $bs bindsym
 #########
 # FONTS #
 #########
-font pango:FiraCode 10
+font pango:		FiraCode 10
 
 
 
@@ -30,7 +30,7 @@ workspace_auto_back_and_forth 							no
 set $ws1												"1: Browser"
 set $ws2												"2: Terminal"
 set $ws3												"3: Vim"
-set $ws4												"4: Editing"
+set $ws4												"4: Games"
 set $ws5												"5: Steam"
 set $ws6												"6: Musix"
 set $ws7												"7: Files"
@@ -39,29 +39,29 @@ set $ws8												"8: Recording"
 
 
 # Switching Workspace
-$bs $mod+1 												workspace $ws1
-$bs $mod+2 												workspace $ws2
-$bs $mod+3 												workspace $ws3
-$bs $mod+4 												workspace $ws4
-$bs $mod+5 												workspace $ws5
-$bs $mod+6 												workspace $ws6
-$bs $mod+7												workspace $ws7
-$bs $mod+8												workspace $ws8
+$bs $mod+1 											workspace $ws1
+$bs $mod+2 											workspace $ws2
+$bs $mod+3 											workspace $ws3
+$bs $mod+4 											workspace $ws4
+$bs $mod+5 											workspace $ws5
+$bs $mod+6 											workspace $ws6
+$bs $mod+7											workspace $ws7
+$bs $mod+8											workspace $ws8
 
 
 # Move focused container to Workspace
-$bs $mod+Shift+1 										move container to workspace $ws1
-$bs $mod+Shift+2 										move container to workspace $ws2
-$bs $mod+Shift+3 										move container to workspace $ws3
-$bs $mod+Shift+4 										move container to workspace $ws4
-$bs $mod+Shift+5 										move container to workspace $ws5
-$bs $mod+Shift+6 										move container to workspace $ws6
-$bs $mod+Shift+7 										move container to workspace $ws7
-$bs $mod+Shift+8 										move container to workspace $ws8
+$bs $mod+Shift+1 								move container to workspace $ws1
+$bs $mod+Shift+2 								move container to workspace $ws2
+$bs $mod+Shift+3 								move container to workspace $ws3
+$bs $mod+Shift+4								move container to workspace $ws4
+$bs $mod+Shift+5								move container to workspace $ws5
+$bs $mod+Shift+6 								move container to workspace $ws6
+$bs $mod+Shift+7 								move container to workspace $ws7
+$bs $mod+Shift+8 								move container to workspace $ws8
 
 
 # Move focused workspace to another display
-$bs $mod+Ctrl+Tab										move workspace to output next
+$bs $mod+Ctrl+Tab								move workspace to output next
 
 
 
@@ -72,8 +72,8 @@ $bs $mod+Ctrl+Tab										move workspace to output next
 #########################
 # WORKSPACE KEYBINDINGS #
 #########################
-$bs $mod+Tab											workspace next
-$bs $mod+Shift+Tab										workspace prev
+$bs $mod+Tab										workspace next
+$bs $mod+Shift+Tab							workspace prev
 
 
 
@@ -84,75 +84,75 @@ $bs $mod+Shift+Tab										workspace prev
 ###############
 
 # Settings
-floating_modifier $mod
+floating_modifier 							$mod
 
 #### More Keybindings ####
 
 # Execute Terminal #
-$bs $mod+Return                 						exec --no-startup-id kitty --name Terminal
-$bs $mod+Shift+Return									exec --no-startup-id kitty --name Editing
+$bs $mod+Return                	exec --no-startup-id kitty --name Terminal
+$bs $mod+Shift+Return						exec --no-startup-id kitty --name Editing
 
 # Toggle Floating Tile/Window #
-$bs $mod+Shift+space            						floating toggle
-$bs $mod+f                      						fullscreen toggle
+$bs $mod+Shift+space            floating toggle
+$bs $mod+f                     	fullscreen toggle
 
 # Change Window Focus
-bindsym $mod+Left               						focus left
-bindsym $mod+Down               						focus down
-bindsym $mod+Up                 						focus up
-bindsym $mod+Right              						focus right
+bindsym $mod+Left         			focus left
+bindsym $mod+Down               focus down
+bindsym $mod+Up                 focus up
+bindsym $mod+Right             	focus right
 
 # Move Focused Window
-$bs $mod+Shift+Left                     				move left
-$bs $mod+Shift+Down                     				move down
-$bs $mod+Shift+Up                       				move up
-$bs $mod+Shift+Right                    				move right
+$bs $mod+Shift+Left             move left
+$bs $mod+Shift+Down             move down
+$bs $mod+Shift+Up               move up
+$bs $mod+Shift+Right            move right
 
 # split in horizontal orientation
-bindsym $mod+h 											split h
+$bs $mod+h 											split h
 
 # split in vertical orientation
-bindsym $mod+v 											split v
+$bs $mod+v 											split v
 
 # i3 Shit
-$bs $mod+Shift+c                						reload
-$bs $mod+Shift+r                						restart
+$bs $mod+Shift+c                reload
+$bs $mod+Shift+r                restart
 
 # Launch DMenu ( a application launcher )
-$bs $mod+Shift+d                						exec dmenu_run -b -l 5 -nf white
-$bs $mod+d                      						exec rofi -show
+$bs $mod+Shift+d                exec dmenu_run -b -l 5 -nf white
+$bs $mod+d                     	exec rofi -show
 
 # Screenshots
-$bs Print 												exec maim "/home/$USER/Pictures/$(date).jpg"
-$bs $mod+Print 											exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date).jpg"
-$bs Shift+Print 										exec --no-startup-id maim --select "/home/$USER/Pictures/$(date).jpg"
+$bs Print 											exec maim "/home/$USER/Pictures/$(date).jpg"
+$bs $mod+Print 									exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date).jpg"
+$bs Shift+Print 								exec --no-startup-id maim --select "/home/$USER/Pictures/$(date).jpg"
 
 # Clipboard Screenshots
-$bs Ctrl+Print 											exec --no-startup-id maim | xclip -selection clipboard -t image/png
-$bs Ctrl+$mod+Print 									exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
-$bs Ctrl+Shift+Print 									exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+$bs Ctrl+Print 									exec --no-startup-id maim | xclip -selection clipboard -t image/png
+$bs Ctrl+$mod+Print 						exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+$bs Ctrl+Shift+Print 						exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
 # Use pactl to adjust volume in PulseAudio.
-$bs XF86AudioRaiseVolume 								exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-$bs XF86AudioLowerVolume 								exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-$bs XF86AudioMute 										exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-$bs XF86AudioMicMute 									exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+$bs XF86AudioRaiseVolume 				exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+$bs XF86AudioLowerVolume 				exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+$bs XF86AudioMute 							exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+$bs XF86AudioMicMute 						exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Enable / Disable Compositor
-$bs $mod+Shift+F12										exec killall -q picom
-$bs Ctrl+Shift+F12										exec picom
+$bs $mod+Shift+F12							exec killall -q picom
+$bs Ctrl+Shift+F12							exec picom
 
 # Enable / Disable Polybar
-$bs $mod+Shift+F5									 	exec /home/$USER/.config/polybar/launch.sh
+$bs $mod+Shift+F5								exec /home/$USER/.config/polybar/launch.sh
 
 # Kill Window
-$bs $mod+Shift+q            							kill
+$bs $mod+Shift+q            		kill
 
 # Session Menu
-
+$bs $mod+Shift+End							exec /home/$USER/.Scripts/powermenu.sh
 
 # lock
-$bs $mod+Delete											exec --no-startup-id i3lock
+$bs $mod+Delete									exec --no-startup-id i3lock
 
 
 
@@ -162,11 +162,12 @@ $bs $mod+Delete											exec --no-startup-id i3lock
 #################################
 # Launch Applications Shortcuts #
 #################################
-$bs $mod+Shift+f                						exec firefox
-$bs $mod+e                      						exec --no-startup-id kitty --name ranger -e ranger
-$bs $mod+Shift+e										exec --no-startup-id Thunar
-$bs $mod+Shift+m										exec /home/$USER/.Scripts/cmus.sh
-$bs $mod+Ctrl+m											exec --no-startup-id java -jar ~/.minecraft/SKlauncher\ 3-beta.21.jar
+$bs $mod+Shift+f                exec firefox-developer-edition
+$bs Ctrl+Shift+f								exec firefox
+$bs $mod+e                      exec --no-startup-id kitty --name ranger -e ranger
+$bs $mod+Shift+e								exec --no-startup-id Thunar
+$bs $mod+Shift+m								exec /home/$USER/.Scripts/cmus.sh
+$bs $mod+Ctrl+m									exec --no-startup-id java -jar ~/.minecraft/SKlauncher\ 3-beta.21.jar
 
 
 
@@ -182,8 +183,8 @@ $bs $mod+Ctrl+m											exec --no-startup-id java -jar ~/.minecraft/SKlauncher
 ##################
 # MONITOR CONFIG #
 ##################
-bindsym $mod+F1 										exec xrandr --output HDMI-1 --off			# Only use Laptop Monitor
-bindsym $mod+F2 										exec xrandr --output HDMI-1 --auto --below eDP-1	# Use Second Monitor
+$bs $mod+F1 										exec xrandr --output HDMI-1 --off					# Only use Laptop Monitor
+$bs $mod+F2 										exec xrandr --output HDMI-1 --auto --below eDP-1	# Use Second Monitor
 
 
 
@@ -195,7 +196,7 @@ bindsym $mod+F2 										exec xrandr --output HDMI-1 --auto --below eDP-1	# Use
 for_window [class="^.*"]                                border pixel 0
 
 for_window [instance="Toolkit"]                         sticky enable
-for_window [instance="Places"]							floating enable, move position center
+for_window [instance="Places"]													floating enable, move position center
 
 for_window [title="Friends List"]                       floating enable
 for_window [title="Steam - News"]                       floating enable
@@ -204,17 +205,17 @@ for_window [class="Pavucontrol"]                        floating enable, resize 
 
 for_window [class="SimpleScreenRecorder"]               floating enable, move position center
 
-for_window [title="Save Image"]							floating enable, resize set 1080 600, move position center
+for_window [title="Save Image"]													floating enable, resize set 1080 600, move position center
 
-for_window [instance="NMTUI"]							floating enable, resize set 600 600, move position center
+for_window [instance="NMTUI"]														floating enable, resize set 600 600, move position center
 
-for_window [class="Gpick"]								floating enable, move position center
+for_window [class="Gpick"]															floating enable, move position center
 
-for_window [class="pl.skmedix.bootstrap.Bootstrap"]		floating enable, resize set 1016 623, move position center
+for_window [class="pl.skmedix.bootstrap.Bootstrap"]			floating enable, resize set 1016 623, move position center
 
-for_window [class="Sxiv"]								floating enable, move position center
+for_window [class="Sxiv"]																floating enable, move position center
 
-for_window [class="steam_app_1827180"]					floating disable
+for_window [class="steam_app_1827180"]									floating disable
 
 
 
@@ -227,19 +228,20 @@ for_window [class="steam_app_1827180"]					floating disable
 assign [class="firefox"]                                $ws1
 
 assign [instance="Terminal"]                            $ws2
-assign [instance="Editing"]								$ws3
 
-assign [class="libreoffice"]	                        $ws4
-assign [class="VSCodium"]                               $ws4
+assign [instance="Editing"]															$ws3
+assign [class="libreoffice"]	                        	$ws3
+assign [class="VSCodium"]                               $ws3
+
+assign [class="steam_app_1827180"]											$ws4
 
 assign [class="Steam"]                                  $ws5
-assign [class="steam_app_1827180"]						$ws5
 assign [class="pl.skmedix.bootstrap.Bootstrap"]         $ws5
 
 assign [instance="cmus"]                                $ws6
 
-assign [instance="ranger"]								$ws7
-assign [class="Thunar"]									$ws7
+assign [instance="ranger"]															$ws7
+assign [class="Thunar"]																	$ws7
 
 assign [class="SimpleScreenRecorder"]                   $ws8
 
@@ -252,15 +254,15 @@ assign [class="SimpleScreenRecorder"]                   $ws8
 #######################
 exec_always --no-startup-id                             autotiling
 exec_always --no-startup-id                             fcitx5
-exec_always --no-startup-id								feh --bg-fill /home/$USER/Pictures/Wallpapers/BlueArchive-2.png
+exec_always --no-startup-id															feh --bg-fill /home/$USER/Pictures/Wallpapers/Blue-Archive-1.png
 exec_always --no-startup-id                             /home/$USER/.Scripts/A-K-B.sh
-exec_always --no-startup-id								/home/$USER/.Scripts/Battery-Notifier.sh
+exec_always --no-startup-id															/home/$USER/.Scripts/Battery-Notifier.sh
 
-exec --no-startup-id 									dex --autostart --environment i3
-exec --no-startup-id             						picom
-exec --no-startup-id									xrandr --output HDMI-1 --off
-exec --no-startup-id 									xss-lock --transfer-sleep-lock -- i3lock --nofork
-exec --no-startup-id									/home/$USER/.config/polybar/launch.sh
+exec --no-startup-id 																		dex --autostart --environment i3
+exec --no-startup-id             												picom
+exec --no-startup-id																		xrandr --output HDMI-1 --off
+exec --no-startup-id 																		xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id																		/home/$USER/.config/polybar/launch.sh
 
 
 
@@ -271,10 +273,10 @@ exec --no-startup-id									/home/$USER/.config/polybar/launch.sh
 ###############################
 # GAPS TO MAKE SHIT LOOK COOL #
 ###############################
-gaps inner 10
-gaps outer 5
-smart_borders on
-hide_edge_borders smart
+gaps inner 					10
+gaps outer 					5
+smart_borders 			on
+hide_edge_borders 	smart
 
 
 
@@ -296,10 +298,10 @@ mode "resize" {
 
         $bs Return      mode "default"
         $bs Escape      mode "default"
-        $bs $mod+r  	mode "default"
+        $bs $mod+r  		mode "default"
 }
 
-$bs $mod+r          	mode "resize"
+$bs $mod+r          		mode "resize"
 
 
 
