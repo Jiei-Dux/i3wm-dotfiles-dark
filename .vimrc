@@ -1,19 +1,44 @@
 "
 " VIM CONFIGURATION ------------------------------------------------------
 "
-set nocompatible
 set nowrap
-set tabstop=4
+set tabstop=2
 set scrolloff=10
+set cursorline
+#set cursorcolumn
+set background=dark
 
-filetype on
+
 filetype plugin on
 filetype indent on
 
-syntax on
+syntax enable
+hi Error ctermbg=NONE
 
 nore ; :
 
-" To remove the annoying red highlighting in vim when editing i3 config file, remove 
+
+"
+" VIM PLUGIN MANAGER -----------------------------------------------------
+"
+set nocompatible              " be iMproved, required
+filetype on                  " required
+
+
+"
+" VIM VUNDLE PLUGINS ----------------------------------------------------
+"
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+	Plugin 'VundleVim/Vundle.vim'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+
+" No Need for this but keeping it here just in case lol
+" To remove the annoying red highlighting in vim when 
+" editing i3 config file, change 
 " SynColor Error ctermbg=Red to ctermbg=NONE in folder
 " that appears when executing :verbose hi Error inside vim
