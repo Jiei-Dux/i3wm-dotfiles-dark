@@ -1,14 +1,15 @@
 "
 " VIM CONFIGURATION ------------------------------------------------------
 "
+set nocompatible
 set nowrap
-set tabstop=2
+"set tabstop=2
 set scrolloff=10
 set cursorline
-#set cursorcolumn
 set background=dark
+set mouse=a
 
-
+filetype on
 filetype plugin on
 filetype indent on
 
@@ -17,12 +18,12 @@ hi Error ctermbg=NONE
 
 nore ; :
 
+"autocmd BufReadPost *.doc silent %!antiword "%"
+"autocmd BufReadPost *.odt,*.odp silent %!odt-1txt "%"
+"autocmd BufReadPost *.pdf silent %!pdftotext -nopgbrk -layout -q -eol unix "%" - | fmt -w78
+"autocmd BufReadPost *.rtf silent %!unrtf --text "%"
 
-"
-" VIM PLUGIN MANAGER -----------------------------------------------------
-"
-set nocompatible              " be iMproved, required
-filetype on                  " required
+
 
 
 "
@@ -32,13 +33,20 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 	Plugin 'VundleVim/Vundle.vim'
-
+	
+	Plugin 'jiangmiao/auto-pairs'
+	
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 
-" No Need for this but keeping it here just in case lol
-" To remove the annoying red highlighting in vim when 
-" editing i3 config file, change 
-" SynColor Error ctermbg=Red to ctermbg=NONE in folder
-" that appears when executing :verbose hi Error inside vim
+
+
+"
+" VIM-VISUAL-MULTI ------------------------------------------------------
+"
+		let g:VM_mouse_mappings    = 1   
+    let g:VM_theme             = 'iceblue'    
+    let g:VM_maps = {}  
+    let g:VM_maps["Undo"]      = 'u' 
+    let g:VM_maps["Redo"]      = '<C-r>'
