@@ -3,12 +3,21 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 export ZSH="$HOME/.oh-my-zsh"
-export EDITOR=vim
-alias crontab="export VISUAL=vim; crontab"
-alias icat="kitty +kitten icat"
+export VISUAL="vim"
+export EDITOR="$VISUAL"
+
+
+#########
+# ALIAS #
+#########
+alias v="vim"
+alias updmrrs='sudo reflector --verbose --latest 20 --protocol https --sort rate --save /etc/pacman.d/mirrorlist'
+alias yt="$HOME/.Scripts/YoutubeDL.sh"
+alias android-connect="jmtpfs /home/jiei/mnt"
+alias archsh="tput smcup && /home/$USER/.Scripts/Post-Archlinux-Installation-Script.sh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
-ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="false"
 
 plugins=(
 	archlinux
