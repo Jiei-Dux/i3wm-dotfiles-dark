@@ -9,12 +9,12 @@ done
 desktop=$(echo $DESKTOP_SESSION)
 
 for M in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-				if [ $M == 'eDP-1' ]
-				then
-								MONITOR=$M polybar main &
+	if [ $M == 'eDP-1' ]
+	then
+		MONITOR=$M polybar main &
 
-				elif [ $M == 'HDMI-1' ]
-				then
-								MONITOR=$M polybar main &
-				fi
+	elif [ $M == 'HDMI-1' ]
+	then
+		MONITOR=$M polybar main &
+	fi
 done
