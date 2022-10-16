@@ -1,5 +1,6 @@
 configuration{
-    modi: "run,drun,window";
+    modi: "drun,window,run";
+	icon-theme: "Space Mono";
     show-icons: false;
     terminal: "kitty";
     drun-display-format: "{name}";
@@ -8,8 +9,7 @@ configuration{
     hide-scrollbar: true;
     display-drun: "   Apps ";
     display-run: "   Run ";
-    display-window: " 﩯  Window";
-    display-Network: " 󰤨  Network";
+    display-window: "   Window";
     sidebar-mode: true;
 }
 
