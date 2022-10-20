@@ -16,7 +16,7 @@ set $bs					bindsym
 #########
 # FONTS #
 #########
-#font pango:									
+font pango:				Iosevka 0
 
 
 
@@ -86,21 +86,21 @@ $bs $mod1+3 	workspace $ws3
 $bs $mod1+4 	workspace $ws4
 $bs $mod1+5 	workspace $ws5
 $bs $mod1+6 	workspace $ws6
-$bs $mod1+7	workspace $ws7
-$bs $mod1+8	workspace $ws8
+$bs $mod1+7	    workspace $ws7
+$bs $mod1+8	    workspace $ws8
 $bs $mod1+9 	workspace $ws9
-$bs $mod1+0	workspace $ws10
+$bs $mod1+0	    workspace $ws10
 
-$bs $mod2+1	workspace $ws11
-$bs $mod2+2	workspace $ws12
-$bs $mod2+3	workspace $ws13
-$bs $mod2+4	workspace $ws14
-$bs $mod2+5	workspace $ws15
-$bs $mod2+6	workspace $ws16
-$bs $mod2+7	workspace $ws17
-$bs $mod2+8	workspace $ws18
-$bs $mod2+9	workspace $ws19
-$bs $mod2+0	workspace $ws20
+$bs $mod2+1	    workspace $ws11
+$bs $mod2+2	    workspace $ws12
+$bs $mod2+3	    workspace $ws13
+$bs $mod2+4	    workspace $ws14
+$bs $mod2+5	    workspace $ws15
+$bs $mod2+6	    workspace $ws16
+$bs $mod2+7	    workspace $ws17
+$bs $mod2+8	    workspace $ws18
+$bs $mod2+9	    workspace $ws19
+$bs $mod2+0	    workspace $ws20
 
 
 # Move focused container to Workspace
@@ -273,6 +273,7 @@ for_window [class="Sxiv"]				floating enable, move position center
 for_window [class="^steam_app_*"]			floating disable #Steam Games
 
 for_window [class="huiontablet"]			floating enable
+for_window [class="TerraTechLinux64.x86_64"]		floating enable
 
 
 
@@ -295,8 +296,9 @@ for_window [instance="Vim"]				move to workspace $ws3
 
 for_window [title="^Minecraft*"]			move to workspace $ws4
 for_window [class="^steam_app_*"]			move to workspace $ws4
+for_window [class="TerraTechLinux64.x86_64"]		move to workspace $ws4
 
-for_window [class="PolyMC"]				move to workspace $ws5
+for_window [class="ATLauncher"]				move to workspace $ws5
 for_window [class="Steam"]				move to workspace $ws5
 
 for_window [instance="cmus"]				move to workspace $ws6
@@ -318,7 +320,7 @@ for_window [class="Thunar"]				move to workspace $ws17
 
 for_window [class="Microsoft Teams - Preview"]		move to workspace $ws18
 
-for_window [instance="^libreoffice-*"]			move to workspace $ws19
+for_window [class="DesktopEditors"]			move to workspace $ws19
 
 for_window [class="obs"]				move to workspace $ws20
 for_window [class="SimpleScreenRecorder"]		move to workspace $ws20
@@ -330,20 +332,20 @@ for_window [class="SimpleScreenRecorder"]		move to workspace $ws20
 #######################
 # APPLICATION STARTUP #
 #######################
-exec_always --no-startup-id                             	autotiling
-#exec_always --no-startup-id                             	fcitx5
-exec_always --no-startup-id					sh /home/$USER/.fehbg 
-exec_always --no-startup-id					xset -dpms
-exec_always --no-startup-id					xset s off
-exec_always --no-startup-id                             	/home/$USER/.Scripts/A-K-B.sh
-exec_always --no-startup-id					/home/$USER/.Scripts/Battery-Notifier.sh
+exec_always --no-startup-id                             autotiling
+#exec_always --no-startup-id                            	fcitx5
+exec_always --no-startup-id				sh /home/$USER/.fehbg 
+exec_always --no-startup-id				xset -dpms
+exec_always --no-startup-id				xset s off
+#exec_always --no-startup-id                            /home/$USER/.Scripts/A-K-B.sh
+exec_always --no-startup-id				/home/$USER/.Scripts/Battery-Notifier.sh
 
-exec --no-startup-id 						dex --autostart --environment i3
-exec --no-startup-id 						bluetoothctl power off
-exec --no-startup-id             				picom
-exec --no-startup-id						xrandr --output HDMI-1 --off
-exec --no-startup-id 						xss-lock --transfer-sleep-lock -- i3lock --nofork
-exec --no-startup-id						/home/$USER/.config/polybar/launch.sh
+exec --no-startup-id 					dex --autostart --environment i3
+exec --no-startup-id 					bluetoothctl power off
+exec --no-startup-id             			picom
+exec --no-startup-id					xrandr --output HDMI-1 --off
+exec --no-startup-id 					xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id					/home/$USER/.config/polybar/launch.sh
 
 
 
