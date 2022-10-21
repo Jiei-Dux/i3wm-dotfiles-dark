@@ -1,9 +1,9 @@
 ############
 # SETTINGS #
 ############
-set $mod1				Mod4
-set $mod2				Mod1
-set $bs					bindsym
+set $mod1				        Mod4
+set $mod2				        Mod1
+set $bs					        bindsym
 
 # LEGEND #
 # Mod1 = Alt
@@ -16,7 +16,7 @@ set $bs					bindsym
 #########
 # FONTS #
 #########
-font pango:				Iosevka 0
+font pango:				        Iosevka 0
 
 
 
@@ -27,7 +27,7 @@ font pango:				Iosevka 0
 ##############
 
 # Settings
-workspace_auto_back_and_forth 		no	
+workspace_auto_back_and_forth 	no	
 
 
 
@@ -70,7 +70,7 @@ set $ws20	20
 #ws12	=	Coding
 #ws13	=	
 #ws14	=	
-#ws15	=	
+#ws15	=	Minecraft Launcher
 #ws16	=	
 #ws17	=	Files
 #ws18	=	Meeting
@@ -130,14 +130,11 @@ $bs $mod2+Shift+0			move container to workspace $ws20
 
 
 
-
-
-
 #########################
 # WORKSPACE KEYBINDINGS #
 #########################
-$bs $mod1+Tab				workspace next
-$bs $mod2+Tab				workspace prev
+$bs $mod1+Tab				    workspace next
+$bs $mod2+Tab				    workspace prev
 
 
 
@@ -148,47 +145,47 @@ $bs $mod2+Tab				workspace prev
 ###############
 
 # Settings
-floating_modifier 			$mod1
+floating_modifier 			    $mod1
 
 #### More Keybindings ####
 
 # Execute Terminal #
-$bs $mod1+Return                	exec --no-startup-id kitty --name Terminal
-$bs $mod2+Return			exec --no-startup-id kitty --name Vim
+$bs $mod1+Return                exec --no-startup-id kitty --name Terminal
+$bs $mod2+Return			    exec --no-startup-id kitty --name Vim
 
 $bs $mod1+Ctrl+Return			exec --no-startup-id kitty --name Coding
 
 # Toggle Floating Tile/Window #
-$bs $mod1+Shift+space            	floating toggle
-$bs $mod1+f                     	fullscreen toggle
+$bs $mod1+Shift+space           floating toggle
+$bs $mod1+f                     fullscreen toggle
 
 # Change Window Focus
 $bs $mod1+Left         			focus left
-$bs $mod1+Down               		focus down
-$bs $mod1+Up                 		focus up
-$bs $mod1+Right             		focus right
+$bs $mod1+Down               	focus down
+$bs $mod1+Up                 	focus up
+$bs $mod1+Right             	focus right
 
 # Move Focused Window
-$bs $mod1+Shift+Left            	move left
-$bs $mod1+Shift+Down            	move down
-$bs $mod1+Shift+Up              	move up
-$bs $mod1+Shift+Right           	move right
+$bs $mod1+Shift+Left            move left
+$bs $mod1+Shift+Down            move down
+$bs $mod1+Shift+Up              move up
+$bs $mod1+Shift+Right           move right
 
 # i3 Shit
-$bs $mod1+Shift+c			reload
-$bs $mod1+Shift+r			restart
+$bs $mod1+Shift+c			    reload
+$bs $mod1+Shift+r			    restart
 
 # Launch DMenu ( a application launcher )
-$bs $mod1+d				exec rofi -show
+$bs $mod1+d				        exec rofi -show
 
 # Flameshot
-$bs Print 				exec flameshot full
-$bs Shift+Print 			exec flameshot gui
+$bs Print 				        exec flameshot full
+$bs Shift+Print 			    exec flameshot gui
 
 # Use pactl to adjust volume.
 $bs XF86AudioRaiseVolume 		exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 $bs XF86AudioLowerVolume 		exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-$bs XF86AudioMute 			exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+$bs XF86AudioMute 			    exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 $bs XF86AudioMicMute 			exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Use brightnessctl to change brightness
@@ -196,21 +193,20 @@ $bs $mod1+Ctrl+Shift+Up 		exec /home/$USER/.Scripts/BrightnessUp.sh
 $bs $mod1+Ctrl+Shift+Down 		exec /home/$USER/.Scripts/BrightnessDw.sh
 
 # Enable / Disable Compositor
-$bs $mod1+Shift+F12			exec killall -q picom
-$bs $mod2+Shift+F12			exec picom
+$bs $mod1+Shift+F12			    exec killall -q picom
+$bs $mod2+Shift+F12			    exec picom
 
 # Reload / Launch Polybar
-$bs $mod1+Shift+F5			exec /home/$USER/.config/polybar/launch.sh
+$bs $mod1+Shift+F5			    exec /home/$USER/.config/polybar/launch.sh
 
 # Kill Window
-$bs $mod1+Shift+q            		kill
+$bs $mod1+Shift+q            	kill
 
 # Session Menu
-$bs $mod1+Shift+End			exec /home/$USER/.Scripts/powermenu.sh
+$bs $mod1+Shift+End			    exec /home/$USER/.Scripts/powermenu.sh
 
 # lock
-$bs $mod1+Delete			exec --no-startup-id i3lock
-
+$bs $mod1+Delete			    exec --no-startup-id i3lock
 
 
 
@@ -219,18 +215,15 @@ $bs $mod1+Delete			exec --no-startup-id i3lock
 #################################
 # Launch Applications Shortcuts #
 #################################
-$bs $mod2+Shift+f                	exec firefox-developer-edition
-$bs $mod1+Shift+f			exec firefox
-$bs $mod1+Shift+e			exec --no-startup-id Thunar
-$bs $mod1+Shift+m			exec --no-startup-id kitty --name Music -e cmus
-$bs $mod1+Shift+s 			exec --no-startup-id sxiv /home/$USER/Pictures/1st\ Sem\ Schedule.png
+$bs $mod1+Shift+f			    exec firefox
+$bs $mod2+Shift+f               exec firefox-developer-edition
 
+$bs $mod1+Shift+e			    exec Thunar                                             # Launch File Manager
 
+$bs $mod1+Shift+m		        exec kitty --name Music -e cmus                         # Launch cmus Player
+$bs $mod2+Shift+m               exec bash /home/$USER/.i3/Workspace6.sh                 # Launch cmus with Audio Visualizer
 
-
-
-
-
+$bs $mod1+Shift+s 			    exec feh /home/$USER/Pictures/1st\ Sem\ Schedule.png   # Just my College Schedule
 
 
 
@@ -239,10 +232,10 @@ $bs $mod1+Shift+s 			exec --no-startup-id sxiv /home/$USER/Pictures/1st\ Sem\ Sc
 ##################
 # MONITOR CONFIG #
 ##################
-$bs $mod1+F1 				exec xrandr --output HDMI-1 --off | exec /home/$USER/.config/polybar/launch.sh
-$bs $mod1+F2 				exec xrandr --output HDMI-1 --mode 1366x768 --below eDP-1 | exec /home/$USER/.config/polybar/launch.sh
-$bs $mod1+F3				exec xrandr --output HDMI-1 --mode 1366x768 --right-of eDP-1 | exec /home/$USER/.config/polybar/launch.sh
-$bs $mod1+F4				exec xrandr --output HDMI-1 --mode 1366x768 --left-of eDP-1 | exec /home/$USER/.config/polybar/launch.sh
+$bs $mod1+F1 				    exec xrandr --output HDMI-1 --off | exec /home/$USER/.config/polybar/launch.sh
+$bs $mod1+F2 				    exec xrandr --output HDMI-1 --mode 1366x768 --below eDP-1 | exec /home/$USER/.config/polybar/launch.sh
+$bs $mod1+F3				    exec xrandr --output HDMI-1 --mode 1366x768 --right-of eDP-1 | exec /home/$USER/.config/polybar/launch.sh
+$bs $mod1+F4				    exec xrandr --output HDMI-1 --mode 1366x768 --left-of eDP-1 | exec /home/$USER/.config/polybar/launch.sh
 
 $bs $mod1+Ctrl+greater 			move workspace to output HDMI-1
 $bs $mod1+Ctrl+less 			move workspace to output eDP-1
@@ -254,31 +247,24 @@ $bs $mod1+Ctrl+less 			move workspace to output eDP-1
 ###################
 # Window settings #
 ###################
-for_window [class="^.*"]                               	border pixel 0
+for_window [class="^.*"]                        border pixel 0
 
-for_window [instance="Toolkit"]                         sticky enable
-for_window [instance="Places"]				floating enable, move position center
+for_window [instance="Toolkit"]                 sticky enable
+for_window [instance="Places"]				    floating enable, move position center
 
-for_window [title="Friends List"]                       floating enable
-for_window [title="Steam - News"]                       floating enable
+for_window [title="Friends List"]               floating enable
+for_window [title="Steam - News"]               floating enable
 
-for_window [class="Pavucontrol"]                        floating enable, resize set 1080 500, move position center
+for_window [class="Pavucontrol"]                floating enable, resize set 1080 500, move position center
+for_window [title="File Upload"]                resize set 800 500, move position center
 
-for_window [class="SimpleScreenRecorder"]               floating enable, move position center
+for_window [class="Gpick"]				        floating enable, move position center
 
-for_window [class="Gpick"]				floating enable, move position center
+for_window [class="feh"]				        floating enable, move position center
 
-for_window [class="Sxiv"]				floating enable, move position center
+for_window [class="^steam_app_*"]			    floating disable #Steam Games
 
-for_window [class="^steam_app_*"]			floating disable #Steam Games
-
-for_window [class="huiontablet"]			floating enable
-for_window [class="TerraTechLinux64.x86_64"]		floating enable
-
-
-
-
-
+for_window [class="huiontablet"]			    floating enable
 
 
 
@@ -288,42 +274,42 @@ for_window [class="TerraTechLinux64.x86_64"]		floating enable
 #   ASSIGNMENTS   #
 ###################
 
-for_window [class="firefox"]				move to workspace $ws1
+for_window [class="firefox"]				    move to workspace $ws1
 
-for_window [instance="Terminal"]			move to workspace $ws2
+for_window [instance="Terminal"]			    move to workspace $ws2
 
-for_window [instance="Vim"]				move to workspace $ws3
+for_window [instance="Vim"]				        move to workspace $ws3
 
-for_window [title="^Minecraft*"]			move to workspace $ws4
-for_window [class="^steam_app_*"]			move to workspace $ws4
-for_window [class="TerraTechLinux64.x86_64"]		move to workspace $ws4
+for_window [title="^Minecraft*"]			    move to workspace $ws4
+for_window [class="^steam_app_*"]			    move to workspace $ws4
 
-for_window [class="ATLauncher"]				move to workspace $ws5
-for_window [class="Steam"]				move to workspace $ws5
+for_window [class="Steam"]				        move to workspace $ws5
 
-for_window [instance="cmus"]				move to workspace $ws6
+for_window [instance="cava"]                    move to workspace $ws6
+for_window [instance="Music"]				    move to workspace $ws6
 
-for_window [class="krita"]				move to workspace $ws7
+for_window [class="krita"]				        move to workspace $ws7
 
-for_window [class="kdenlive"]				move to workspace $ws8
+for_window [class="kdenlive"]				    move to workspace $ws8
 
-for_window [class="^Gimp-*"]				move to workspace $ws9
+for_window [class="^Gimp-*"]				    move to workspace $ws9
 
 
-for_window [class="firefoxdeveloperedition"]		move to workspace $ws11
+for_window [class="firefoxdeveloperedition"]	move to workspace $ws11
 
-for_window [instance="Coding"]				move to workspace $ws12
-for_window [class="code-oss"]				move to workspace $ws12
+for_window [instance="Coding"]				    move to workspace $ws12
+for_window [class="code-oss"]				    move to workspace $ws12
 for_window [class="^Apache NetBeans IDE*"]		move to workspace $ws12
 
-for_window [class="Thunar"]				move to workspace $ws17
+for_window [class="ATLauncher"]				    move to workspace $ws15
 
-for_window [class="Microsoft Teams - Preview"]		move to workspace $ws18
+for_window [class="Thunar"]				        move to workspace $ws17
 
-for_window [class="DesktopEditors"]			move to workspace $ws19
+for_window [class="Microsoft Teams - Preview"]	move to workspace $ws18
 
-for_window [class="obs"]				move to workspace $ws20
-for_window [class="SimpleScreenRecorder"]		move to workspace $ws20
+for_window [class="DesktopEditors"]			    move to workspace $ws19
+
+for_window [class="obs"]				        move to workspace $ws20
 
 
 
@@ -332,34 +318,20 @@ for_window [class="SimpleScreenRecorder"]		move to workspace $ws20
 #######################
 # APPLICATION STARTUP #
 #######################
-exec_always --no-startup-id                             autotiling
-#exec_always --no-startup-id                            	fcitx5
-exec_always --no-startup-id				sh /home/$USER/.fehbg 
-exec_always --no-startup-id				xset -dpms
-exec_always --no-startup-id				xset s off
-#exec_always --no-startup-id                            /home/$USER/.Scripts/A-K-B.sh
-exec_always --no-startup-id				/home/$USER/.Scripts/Battery-Notifier.sh
+exec_always --no-startup-id                     autotiling
+#exec_always --no-startup-id                    fcitx5
+exec_always --no-startup-id				        sh /home/$USER/.fehbg 
+exec_always --no-startup-id				        xset -dpms
+exec_always --no-startup-id				        xset s off
+#exec_always --no-startup-id                    /home/$USER/.Scripts/A-K-B.sh
+exec_always --no-startup-id				        /home/$USER/.Scripts/Battery-Notifier.sh
 
-exec --no-startup-id 					dex --autostart --environment i3
-exec --no-startup-id 					bluetoothctl power off
-exec --no-startup-id             			picom
-exec --no-startup-id					xrandr --output HDMI-1 --off
-exec --no-startup-id 					xss-lock --transfer-sleep-lock -- i3lock --nofork
-exec --no-startup-id					/home/$USER/.config/polybar/launch.sh
-
-
-
-
-
-
-
-###############################
-# GAPS TO MAKE SHIT LOOK COOL #
-###############################
-gaps inner 				5
-gaps outer 				5
-smart_borders 				on
-hide_edge_borders 			smart
+exec --no-startup-id 					        dex --autostart --environment i3
+exec --no-startup-id 					        bluetoothctl power off
+exec --no-startup-id             			    picom
+exec --no-startup-id					        xrandr --output HDMI-1 --off
+exec --no-startup-id 					        xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id					        /home/$USER/.config/polybar/launch.sh
 
 
 
