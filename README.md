@@ -1,2 +1,2 @@
-# i3-gaps-dotfiles
-My i3-gaps dotfiles
+# i3wm-dotfiles
+My i3wm dotfiles
