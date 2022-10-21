@@ -3,9 +3,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 export ZSH="$HOME/.oh-my-zsh"
-export VISUAL="vim"
-export EDITOR="$VISUAL"
-
 
 #########
 # ALIAS #
@@ -20,7 +17,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 ENABLE_CORRECTION="false"
 
 plugins=(
-	archlinux
 	git
 	sudo
 	)
